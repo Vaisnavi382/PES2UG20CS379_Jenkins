@@ -12,7 +12,14 @@ pipeline {
                 sh './PES2UG20CS379-1'
             }
         }
+        stage('Deploy'){
+            steps{
+                sh 'mvn deploy'
+                echo 'Deployment Successful'
+            }
+        }
     }
+    
     post {
         always {
             echo 'Pipeline completed'
